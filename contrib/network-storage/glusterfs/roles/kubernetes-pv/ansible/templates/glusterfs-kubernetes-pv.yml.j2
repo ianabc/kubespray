@@ -6,9 +6,9 @@ spec:
   capacity:
       storage: "{{ hostvars[groups['gfs-cluster'][0]].gluster_disk_size_gb }}Gi"
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   glusterfs:
     endpoints: glusterfs
     path: gluster
     readOnly: false
-  persistentVolumeReclaimPolicy: Retain
+  persistentVolumeReclaimPolicy: Delete
